@@ -1,13 +1,52 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "id": "1",
+      "name": "Mr. Juan Diego",
+      "email": "juandiego@gmail.com",
+      "bio": "Juan Diego Ruiz Moreno, professionally known as Juan Diego, was a Spanish actor who appeared on stage, in television and film productions since 1957. He starred in films such as The Holy Innocents, The 7th Day, Dragon Rapide, París-Tombuctú and You're the One."
+    },
+    {
+      "id": "2",
+      "name": "Miss. Paloma San Basilio",
+      "email": "palomabasilio@gmail.com",
+      "bio": "Paloma Cecilia San Basilio Martínez, known as Paloma San Basilio, is a Spanish singer, songwriter, producer and actress. She was awarded with a Latin Grammy Lifetime Achievement Award for contributions to Latin music."
+    },
+    {
+      "id": "0975",
+      "name": "snopbear",
+      "email": "snopbear@gmail.com",
+      "bio": "lorem Ipsum"
+    },
+    {
+      "id": "81d8",
+      "name": "mo",
+      "email": "mo@gmail.com",
+      "bio": "0000000"
+    },
+    {
+      "id": "7c2e",
+      "name": "test",
+      "email": "Test@gmail.com",
+      "bio": "test"
+    },
+    {
+      "id": "1cb1",
+      "name": "dasd",
+      "email": "asdas@czxc.com",
+      "bio": "asdas"
+    },
+    {
+      "id": "5fde",
+      "name": "sssTesestt",
+      "email": "sssss@gmail.com",
+      "bio": "sssTesestt"
+    },
+    {
+      "id": "98fc",
+      "name": "Final Test 1",
+      "email": "FinalTest@gmail.com",
+      "bio": "Final Test 1"
+    }
+  ]
 }

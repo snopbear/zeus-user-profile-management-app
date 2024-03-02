@@ -1,0 +1,76 @@
+<div
+  class="block max-w-md mx-auto rounded-lg p-6 shadow-2xl shadow-black-500/50 hover:shadow-lg bg-white"
+>
+  <form [formGroup]="_userFormGroup" (ngSubmit)="submitUser()">
+    <!--Name input-->
+    <div class="relative mb-6" data-te-input-wrapper-init>
+      <input
+        type="text"
+        class="outline-none w-full rounded border-0 bg-gray-100 px-3 py-[0.32rem]"
+        name="name"
+        placeholder="Name"
+        [ngClass]="{ text: _formErrors.name }"
+        formControlName="name"
+        (blur)="logValidationErrors()"
+      />
+    </div>
+
+    <!--Email input-->
+    <div class="relative mb-6" data-te-input-wrapper-init>
+      <input
+        type="text"
+        class="outline-none w-full rounded border-0 bg-gray-100 px-3 py-[0.32rem]"
+        name="email"
+        placeholder="Email"
+        [ngClass]="{ text: _formErrors.email }"
+        formControlName="email"
+        (blur)="logValidationErrors()"
+      />
+    </div>
+
+    <!--Message textarea-->
+    <div class="relative mb-6" data-te-input-wrapper-init>
+      <textarea
+        class="outline-none w-full rounded border-0 bg-gray-100 px-3 py-[0.32rem]"
+        name="bio"
+        rows="3"
+        placeholder="BIO"
+        [ngClass]="{ text: _formErrors.bio }"
+        formControlName="bio"
+        (blur)="logValidationErrors()"
+      ></textarea>
+    </div>
+
+    <!--Submit button-->
+    <button
+      type="submit"
+      class="dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]] inline-block w-full rounded bg-slate-900 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+      data-te-ripple-init
+      data-te-ripple-color="light"
+    >
+      Submit
+    </button>
+  </form>
+    <div
+    *ngIf="_errorMessage$ | async as errorMessage"
+    class="m-10 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+    role="alert"
+  >
+    <span class="block sm:inline">{{ errorMessage }}</span>
+    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+      <svg
+        class="fill-current h-6 w-6 text-red-500"
+        role="button"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <title>Close</title>
+        <path
+          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"
+        />
+      </svg>
+    </span>
+  </div>
+
+</div>
+

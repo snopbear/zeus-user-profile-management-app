@@ -1,0 +1,54 @@
+<div
+  class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"
+>
+  <div class="max-w-xl mx-auto sm:px-6 lg:px-8">
+    <div class="flex items-center pt-8 sm:justify-start sm:pt-0">
+      <form
+        [formGroup]="_userFormGroup"
+        (ngSubmit)="login()"
+        class="p-10 bg-white rounded flex justify-center items-center flex-col shadow-md"
+      >
+        <p class="mb-5 text-3xl uppercase text-gray-600">Login</p>
+
+        <select
+          [ngClass]="{ text: _formErrors.name }"
+          class="mb-5 p-3 w-80 focus:border-gray-700 rounded border-2 outline-none"
+          name="id"
+          formControlName="id"
+          (blur)="logValidationErrors()"
+        >
+          <option value="" disabled>Select User</option>
+
+          <option *ngFor="let user of _users$ | async ; trackBy: trackByFn" [value]="user.id">
+            {{ user.name }}
+          </option>
+        </select>
+
+        <input
+          [ngClass]="{ text: _formErrors.password }"
+          type="password"
+          name="password"
+          formControlName="password"
+          class="mb-5 p-3 w-80 focus:border-gray-700 rounded border-2 outline-none placeholder-gray-300"
+          autocomplete="off"
+          placeholder="Password"
+          (blur)="logValidationErrors()"
+        />
+
+        <button
+          class="bg-gray-600 text-white font-bold p-2 rounded w-80 cursor-pointer"
+          id="login"
+          type="submit"
+          [disabled]="_userFormGroup.invalid"
+        >
+          <span>Login</span>
+        </button>
+
+        <div class="flex justify-end w-full mt-10">
+          <a (click)="createUser()" class="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">Create user</a>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 //#region import custom modules
@@ -17,7 +16,6 @@ import { AppComponent } from './@block/root/app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     CoreModule,
     BlockModule
   ],

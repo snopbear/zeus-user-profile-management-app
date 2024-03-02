@@ -1,9 +1,12 @@
-//Modules
+//#region Modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlockRoutingModule } from './block-routing.module';
-//Components
-import { AppComponent } from './root/app.component';
+//#endregion Modules
+
+//#region Components
+import { AppComponent } from '.';
+//#endregion Components
 
 @NgModule({
   declarations: [AppComponent],
