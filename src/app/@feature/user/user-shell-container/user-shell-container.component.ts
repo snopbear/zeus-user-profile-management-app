@@ -5,9 +5,9 @@ import { LocalStorageService } from '@services/index';
 @Component({
   selector: 'zeus-user-shell-container',
   templateUrl: './user-shell-container.component.html',
-  styleUrls: ['./user-shell-container.component.css'],
+  styleUrls: ['./user-shell-container.component.css']
 })
-export class UserShellContainerComponent  {
+export class UserShellContainerComponent {
   //#region service initialization
 
   router = inject(Router);

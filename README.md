@@ -88,7 +88,7 @@ they handle the various aspects of the framework.
 
 ## Development server
 
-Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files and run `json-server` embedded navigate to `http://localhost:3000/.
 
 ## Code scaffolding
 

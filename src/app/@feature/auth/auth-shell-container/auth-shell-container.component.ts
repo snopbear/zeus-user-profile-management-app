@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'zeus-auth-shell-container',
   templateUrl: './auth-shell-container.component.html',
-  styleUrls: ['./auth-shell-container.component.css'],
+  styleUrls: ['./auth-shell-container.component.css']
 })
-export class AuthShellContainerComponent implements OnInit {
+export class AuthShellContainerComponent {
   constructor() {}
-
-  ngOnInit() {}
 }

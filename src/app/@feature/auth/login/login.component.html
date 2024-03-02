@@ -10,33 +10,45 @@
       >
         <p class="mb-5 text-3xl uppercase text-gray-600">Login</p>
 
-        <select
-          [ngClass]="{ text: _formErrors.name }"
-          class="mb-5 p-3 w-80 focus:border-gray-700 rounded border-2 outline-none"
-          name="id"
-          formControlName="id"
-          (blur)="logValidationErrors()"
-        >
-          <option value="" disabled>Select User</option>
+        <div class="h-24">
+          <select
+            [ngClass]="{ text: _formErrors.name }"
+            class="mb-5 p-3 w-80 focus:border-gray-700 rounded border-2 outline-none"
+            name="id"
+            formControlName="id"
+            (blur)="logValidationErrors()"
+          >
+            <option value="" disabled>Select User</option>
+            <option
+              *ngFor="let user of _users$ | async; trackBy: trackByFn"
+              [value]="user.id"
+            >
+              {{ user.name }}
+            </option>
+          </select>
+          <div class="text-red-700 px-2" *ngIf="_formErrors.id">
+            {{ _formErrors.id }}
+          </div>
+        </div>
 
-          <option *ngFor="let user of _users$ | async ; trackBy: trackByFn" [value]="user.id">
-            {{ user.name }}
-          </option>
-        </select>
-
-        <input
-          [ngClass]="{ text: _formErrors.password }"
-          type="password"
-          name="password"
-          formControlName="password"
-          class="mb-5 p-3 w-80 focus:border-gray-700 rounded border-2 outline-none placeholder-gray-300"
-          autocomplete="off"
-          placeholder="Password"
-          (blur)="logValidationErrors()"
-        />
+        <div class="h-24">
+          <input
+            [ngClass]="{ text: _formErrors.password }"
+            type="password"
+            name="password"
+            formControlName="password"
+            class="mb-5 p-3 w-80 focus:border-gray-700 rounded border-2 outline-none placeholder-gray-300"
+            autocomplete="off"
+            placeholder="Password"
+            (blur)="logValidationErrors()"
+          />
+          <div class="text-red-700 px-5" *ngIf="_formErrors.password">
+            {{ _formErrors.password }}
+          </div>
+        </div>
 
         <button
-          class="bg-gray-600 text-white font-bold p-2 rounded w-80 cursor-pointer"
+          class="bg-gray-600 text-white font-bold p-2 rounded w-80 cursor-pointer px-5"
           id="login"
           type="submit"
           [disabled]="_userFormGroup.invalid"
@@ -45,8 +57,11 @@
         </button>
 
         <div class="flex justify-end w-full mt-10">
-          <a (click)="createUser()" class="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">Create user</a>
-
+          <a
+            (click)="createUser()"
+            class="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            >Create user</a
+          >
         </div>
       </form>
     </div>

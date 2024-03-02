@@ -113,10 +113,12 @@ export class EditProfileComponent implements OnInit {
   }
 
   addUser() {
+    // bind user modal
     this.userModal.name = this._userFormGroup.value.name;
     this.userModal.email = this._userFormGroup.value.email;
     this.userModal.bio = this._userFormGroup.value.bio;
 
+    // post user modal to server
     this._userService
       .postUser(this.userModal)
       .pipe(takeUntil(this._unsubscriberService.destroy$))
@@ -134,16 +136,19 @@ export class EditProfileComponent implements OnInit {
         },
       });
   }
+
   updateUser() {
+    // bind user modal
     this.userModal.name = this._userFormGroup.value.name;
     this.userModal.email = this._userFormGroup.value.email;
     this.userModal.bio = this._userFormGroup.value.bio;
 
+    // post user modal to server
     this._userService
       .putUser(this.userModal)
       .pipe(takeUntil(this._unsubscriberService.destroy$))
       .subscribe({
-        next: (res) => {
+        next: () => {
           this._userFormGroup.reset();
           this._router.navigate(['/user/profile']);
         },
@@ -159,8 +164,8 @@ export class EditProfileComponent implements OnInit {
           this._errorMessageSubject.next(err.message);
           return EMPTY; // create new observable that emit error and end the life cycle
         })
-      )
-      .subscribe((user) => {
+      ).subscribe((user) => {
+        // bind user modal
         this.userModal.id = user.id;
         this._userFormGroup.controls['name'].setValue(user.name);
         this._userFormGroup.controls['email'].setValue(user.email);

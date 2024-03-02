@@ -85,7 +85,6 @@ export class LoginComponent implements OnInit {
 
   //#region methods
   login(): void {
-    ;
     if (this._userFormGroup?.valid) {
       this._localStorageService.setItem(
         environment.zeus_user_id,
