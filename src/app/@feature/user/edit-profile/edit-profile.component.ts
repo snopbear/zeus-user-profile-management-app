@@ -45,7 +45,7 @@ export class EditProfileComponent implements OnInit {
   //#endregion
 
   //#region variables declearning
-  userModal = <IUser>{};
+  _userModal = <IUser>{};
 
   _userFormGroup!: FormGroup;
 
@@ -114,13 +114,13 @@ export class EditProfileComponent implements OnInit {
 
   addUser() {
     // bind user modal
-    this.userModal.name = this._userFormGroup.value.name;
-    this.userModal.email = this._userFormGroup.value.email;
-    this.userModal.bio = this._userFormGroup.value.bio;
+    this._userModal.name = this._userFormGroup.value.name;
+    this._userModal.email = this._userFormGroup.value.email;
+    this._userModal.bio = this._userFormGroup.value.bio;
 
     // post user modal to server
     this._userService
-      .postUser(this.userModal)
+      .postUser(this._userModal)
       .pipe(takeUntil(this._unsubscriberService.destroy$))
       .subscribe({
         next: (res) => {
@@ -139,13 +139,13 @@ export class EditProfileComponent implements OnInit {
 
   updateUser() {
     // bind user modal
-    this.userModal.name = this._userFormGroup.value.name;
-    this.userModal.email = this._userFormGroup.value.email;
-    this.userModal.bio = this._userFormGroup.value.bio;
+    this._userModal.name = this._userFormGroup.value.name;
+    this._userModal.email = this._userFormGroup.value.email;
+    this._userModal.bio = this._userFormGroup.value.bio;
 
     // post user modal to server
     this._userService
-      .putUser(this.userModal)
+      .putUser(this._userModal)
       .pipe(takeUntil(this._unsubscriberService.destroy$))
       .subscribe({
         next: () => {
@@ -166,7 +166,7 @@ export class EditProfileComponent implements OnInit {
         })
       ).subscribe((user) => {
         // bind user modal
-        this.userModal.id = user.id;
+        this._userModal.id = user.id;
         this._userFormGroup.controls['name'].setValue(user.name);
         this._userFormGroup.controls['email'].setValue(user.email);
         this._userFormGroup.controls['bio'].setValue(user.bio);
