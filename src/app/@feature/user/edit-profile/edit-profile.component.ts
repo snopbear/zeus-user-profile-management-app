@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from '@models/index';
@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
   selector: 'zeus-edit-profile',
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [UnsubscriberService],
 })
 export class EditProfileComponent implements OnInit {
