@@ -53,13 +53,14 @@ export class EditProfileComponent implements OnInit {
 
   _validationMessages: any = {
     name: {
-      required: 'Name is required.',
+      required: 'name is required.',
     },
     email: {
-      required: 'Email is required.',
+      required: 'email is required.',
+      email: 'email domain is missing.',
     },
     bio: {
-      required: 'BIO is required.',
+      required: 'bio is required.',
     },
   };
 
@@ -80,7 +81,7 @@ export class EditProfileComponent implements OnInit {
   constructor() {
     this._userFormGroup = this._formBuilder.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       bio: ['', [Validators.required]],
     });
   }
@@ -164,7 +165,8 @@ export class EditProfileComponent implements OnInit {
           this._errorMessageSubject.next(err.message);
           return EMPTY; // create new observable that emit error and end the life cycle
         })
-      ).subscribe((user) => {
+      )
+      .subscribe((user) => {
         // bind user modal
         this._userModal.id = user.id;
         this._userFormGroup.controls['name'].setValue(user.name);

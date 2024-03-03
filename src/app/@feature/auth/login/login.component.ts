@@ -43,10 +43,10 @@ export class LoginComponent implements OnInit {
 
   _validationMessages: any = {
     id: {
-      required: 'Name is required.',
+      required: 'name is required.',
     },
     password: {
-      required: 'Password is required.',
+      required: 'password is required.',
     },
   };
   //#endregion

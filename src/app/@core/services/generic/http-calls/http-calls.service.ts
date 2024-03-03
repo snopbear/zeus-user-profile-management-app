@@ -3,6 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpRequestType } from '@models/index';
 
+/*
+HttpResponse : A full HTTP response, including a typed response body (which may be null if one was not returned).
+HttpEvent: Union type for all possible events on the response stream.
+
+
+*/
 @Injectable({
   providedIn: 'root',
 })
