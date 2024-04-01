@@ -24,5 +24,92 @@
       "email": "julioiglesias@gmail.com",
       "bio": "Julio José Iglesias de la Cueva (Madrid, 23 de septiembre de 1943) es un cantante, compositor, músico, productor, exfutbolista, abogado y empresario español ."
     }
+  ],
+  "usersManagers": [
+    {
+      "id": 1,
+      "fullName": "Mark",
+      "contactPreference": "email",
+      "email": "mark@email.com",
+      "phone": "5641238971",
+      "skills": [
+        {
+          "skillName": "C#",
+          "experienceInYears": 1,
+          "proficiency": "beginner"
+        },
+        {
+          "skillName": "Java",
+          "experienceInYears": 2,
+          "proficiency": "intermediate"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "John",
+      "contactPreference": "phone",
+      "email": "john@email.com",
+      "phone": "3242138971",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": 2,
+          "proficiency": "beginner"
+        },
+        {
+          "skillName": "HTML",
+          "experienceInYears": 2,
+          "proficiency": "intermediate"
+        },
+        {
+          "skillName": "LINQ",
+          "experienceInYears": 3,
+          "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Mohammed",
+      "contactPreference": "email",
+      "email": "snopbear@dell.com",
+      "phone": "00000",
+      "skills": [
+        {
+          "skillName": "C#",
+          "experienceInYears": "Angilar",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fullName": "Mohammed Assaf",
+      "email": "snopbear@dell.com",
+      "phone": "00000",
+      "contactPreference": "email",
+      "skills": [
+        {
+          "skillName": "C#",
+          "experienceInYears": "Angilar",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fullName": "Mohammed Assaf 0",
+      "email": "snopbear@dell.com",
+      "phone": "00000",
+      "contactPreference": "email",
+      "skills": [
+        {
+          "skillName": "C#",
+          "experienceInYears": "Angilar",
+          "proficiency": "beginner"
+        }
+      ]
+    }
   ]
 }

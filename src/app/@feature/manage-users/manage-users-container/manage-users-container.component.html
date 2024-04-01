@@ -14,25 +14,17 @@
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow"></div>
         <div>
-          <ul class="flex">
-            <li>
-              <a [routerLink]="['/manage-user/list-users']"
-                class="cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-white hover:text-teal-lighter mr-4">User Manager</a>
-            </li>
-            <li>
-              <a
-                (click)="logout()"
-                class="cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-white hover:text-teal-lighter mr-4"
-              >
-                Sign Out
-              </a>
-            </li>
-          </ul>
+          <!-- <a
+            (click)="logout()"
+            class="cursor-pointer block mt-4 lg:inline-block lg:mt-0 text-white hover:text-teal-lighter mr-4"
+          >
+            Sign Out
+          </a> -->
         </div>
       </div>
     </nav>
 
-    <div class="px-4 pt-4 flex-1 mt-40">
+    <div class="px-4 pt-4 flex-1 mt-10">
       <div class="container mx-auto">
         <router-outlet></router-outlet>
       </div>

@@ -1,0 +1,13 @@
+.container{
+    height: 50rem;
+    overflow: auto;
+}
+
+.invalid{
+    border: 1px solid red;
+}
+hr{
+    background-color: coral;
+    height: 2px;
+    margin: 20px;
+}

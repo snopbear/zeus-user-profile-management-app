@@ -1,5 +1,5 @@
 //#region Interface
-export * from './interfaces/user/i-user';
+export * from './interfaces/user/user';
 //#endregion
 
 //#region Types

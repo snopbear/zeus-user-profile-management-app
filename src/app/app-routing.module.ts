@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./@feature/user/user.module').then((module) => module.UserModule),
   },
+  {
+    path: 'manage-user',
+    loadChildren: () =>   
+      import('./@feature/manage-users/manage-users.module').then((module) => module.ManageUsersModule),
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

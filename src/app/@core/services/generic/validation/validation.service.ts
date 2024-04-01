@@ -13,7 +13,7 @@ Finally, the code returns the formErrors object, which contains the validation e
 form group.
 */
 import { Injectable } from '@angular/core';
-import { FormArray, FormGroup } from '@angular/forms';
+import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -22,8 +22,7 @@ export class ValidationService {
   constructor() {}
   getValidationErrors(group: FormGroup, validationMessages: any): any {
     var formErrors = {} as any;
-    debugger
-
+    
     Object.keys(group.controls).forEach((key: any) => {
       const abstractControl = group.get(key);
 
@@ -63,5 +62,31 @@ export class ValidationService {
       }
     });
     return formErrors;
+  }
+
+  emailDomain(domainName: string) {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const email: string = control.value;
+      const domain = email.substring(email.lastIndexOf('@') + 1);
+      if (email === '' || domain.toLowerCase() === domainName.toLowerCase()) {
+        return null;
+      } else {
+        return { emailDomain: true };
+      }
+    };
+  }
+
+  matchEmails(group: AbstractControl): { [key: string]: any } | null {
+    const emailControl = group.get('email');
+    const confirmEmailControl = group.get('confirmEmail');
+
+    if (
+      emailControl?.value === confirmEmailControl?.value ||
+      confirmEmailControl?.pristine
+    ) {
+      return null;
+    } else {
+      return { emailMismatch: true };
+    }
   }
 }
